@@ -54,4 +54,9 @@ public class EmployeeController {
         return new ResponseEntity<>(dtos,HttpStatus.OK);
 
     }
+    @GetMapping("/byid")
+    public ResponseEntity<EmployeeDto> getById(@RequestParam long id){
+        EmployeeDto dto = employeeService.getById(id);
+        return new ResponseEntity<>(dto, HttpStatus.OK);
+    }
 }
